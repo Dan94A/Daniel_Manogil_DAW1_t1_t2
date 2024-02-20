@@ -5,7 +5,6 @@ public class Carrera extends main.Entrada{
     private String matrGanadora;
     private  int kmTotales, numeroVueltas;
     private static int ganador=0;
-    private static String matriculaganadora;
     //CREAMOS CONSTRUCTOR
     public Carrera(int kmTotales, int numeroVueltas, String matrGanadora) {
         this.kmTotales=kmTotales;
@@ -38,7 +37,7 @@ public class Carrera extends main.Entrada{
     }
     //MÉTODO DE DECLARACIÓN DE GANADOR
     public void ganador() {
-        if(ganador==4) {
+        if(ganador==3) {
             System.out.println ("HA HABIDO UN EMPATE PORQUE LOS DOS COCHES HAN LLEGADO AL MISMO TIEMPO");
         }else
         {
@@ -54,7 +53,6 @@ public class Carrera extends main.Entrada{
             else
             {
                 ganador=1;
-                matriculaganadora=cocheChevrolet.getmatricula();
                 setmatrGanadora(cocheChevrolet.getmatricula());
             }
         }
@@ -62,8 +60,7 @@ public class Carrera extends main.Entrada{
         {
             if (cocheRenault.getkmRecorridos() >= getkmTotales()) {
                 ganador=2;
-                matriculaganadora=cocheChevrolet.getmatricula();
-                setmatrGanadora(cocheChevrolet.getmatricula());
+                setmatrGanadora(cocheRenault.getmatricula());
             }
         }
     }
